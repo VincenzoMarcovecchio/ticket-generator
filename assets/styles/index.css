@@ -1,3 +1,5 @@
+
+
 body {
 position:  relative;
 background-image:  url(../images/pattern-lines.svg), url(../images/pattern-squiggly-line-top.svg), url(../images/pattern-squiggly-line-bottom.svg),url(../images/background-mobile.png);
@@ -101,7 +103,8 @@ form {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: start;
+    max-width: 600px;
+    margin: auto;
 }
 
 label {
@@ -121,12 +124,10 @@ background-color: rgba(171, 171, 188, 0.25);
   border: 1px solid #9A9AB5;
   border-radius: 5px;
   padding: 0.8rem;
-  width: 98%;
-  margin:1rem auto;
+width: 100%;  margin:1rem auto;
 }
 
 .formDetails {
-    width: 93%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -176,19 +177,32 @@ button {
     margin: 5rem auto;
 }
  .ticket-description {
-    margin: -1rem 0 0 3.3rem;
+    margin: -1rem 0 1rem 3.4rem;
+    font-size: 10px;
  }
 .ticket-container {
     display: none;
     background: url(../images/pattern-ticket.svg);
     background-size: contain;
     background-repeat: no-repeat;
-    width: 100%;
+    background-position: top;
+height: 280px;
+    width: 100%;  
+    max-width: 600px; 
+     position: relative;
+
 }
 .ticket-results {
     display: flex;
     align-items:flex-start;
     justify-content: space-between;
+    margin: 1rem 0 0 1rem;
+}
+.ticket-number {
+    position: absolute;
+    right: 0.1rem;
+    top: 3rem;
+    rotate: 90deg;
 }
 .ticket-name {
     display: inline-block;
@@ -204,12 +218,23 @@ button {
     background-clip: text;
     color: transparent;   
 }
+.result-name {
+    margin: 0;
+}
+.result-github {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
 .img-result {
     width: 40px;
     height: 40px;
     border-radius: 12px;
+    margin-right: 1rem;
 
 }
 .ticket-container .logo {
-    margin: 0.5rem;
+    margin: 0.9rem -1%;
+    scale: 0.8;
 }
