@@ -11,7 +11,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./assets/styles/index.css">
   <title>Frontend Mentor | Conference ticket generator</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -19,13 +18,19 @@
     * {
       font-family: "Inconsolata", serif;
       font-optical-sizing: auto;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
 
     }
 
     .attribution a {
       color: hsl(228, 45%, 44%);
+      margin-top: 3rem;
     }
   </style>
+  <link rel="stylesheet" href="./assets/styles/index.css">
+
 </head>
 
 <body>
@@ -47,12 +52,13 @@
   <!-- Form starts -->
 
   <h2>Your Journey to Coding Conf 2025 Starts Here!</h2>
-  <p class="description">Secure your spot at next year's biggest coding conference.
+  <p class="description" style="margin-top: 2rem;">Secure your spot at next year's biggest coding conference.
   </p>
 
 
   <form id="myForm" action="/#" method="POST" enctype="multipart/form-data">
-    <p style="text-align: left;color: aliceblue;font-weight: 700;"> Upload Avatar</p>
+    <p style="margin-top: 3rem;margin-right:auto;margin-bottom:1.2rem;color: aliceblue;font-weight: 700;"> Upload Avatar
+    </p>
     <div class="upload-container">
       <img id="output" />
       <label name="file-upload" for="file-upload" class="file-upload"><svg xmlns="http://www.w3.org/2000/svg" width="30"
@@ -72,12 +78,14 @@
       <p class="avatar-error"></p>
     </div>
 
-    <p style="text-align: left;display:flex;align-items: center;font-size: smaller;"><svg class="icon"
-        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
+    <p
+      style="margin-top: 0.6rem; text-align: left;display:flex;align-items: center;font-size: smaller;margin-bottom: 2rem;">
+      <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
         <path stroke="white" stroke-linecap="round" stroke-linejoin="round" d="M2 8a6 6 0 1 0 12 0A6 6 0 0 0 2 8Z" />
         <path fill="white" d="M8.004 10.462V7.596ZM8 5.57v-.042Z" />
         <path stroke="white" stroke-linecap="round" stroke-linejoin="round" d="M8.004 10.462V7.596M8 5.569v-.042" />
-      </svg>&nbsp;Upload your photo (JPG or PNG, max size: 500KB).</p>
+      </svg>&nbsp;Upload your photo (JPG or PNG, max size: 500KB).
+    </p>
     <div class="formDetails">
       <label style="margin-right: auto;">Full Name</label>
       <input type="text" name="name" id="name">
@@ -107,7 +115,7 @@
   <!-- Generated tickets starts -->
 
   <div class="congrats-container">
-    <h2>Congrats, <span class="ticket-name"></span>! Your ticket is ready.</h2>
+    <h2 style="margin-bottom: 2rem;">Congrats, <span class="ticket-name"></span>! Your ticket is ready.</h2>
 
     We've emailed your ticket to <span class="ticket-email"></span> and will send updates in the run up to the event.
   </div>
@@ -126,16 +134,17 @@
     <div class="ticket-results">
       <img class="img-result" />
       <div>
-        <p class="result-name"></p>
+        <p class="result-name" style="text-align: left;"></p>
         <p class="result-github"></p>
       </div>
     </div>
+    <span class="ticket-number">#334006</span>
   </div>
 
 
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">Vincenzo Marcovecchio</a>.
   </div>
 
 
@@ -252,7 +261,12 @@
         const ticketName = document.querySelector('.ticket-name').textContent = name
         const ticketEmail = document.querySelector('.ticket-email').textContent = email
         document.querySelector('.result-name').textContent = name
-        document.querySelector('.result-github').textContent = "@" + github
+        document.querySelector('.result-github').innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="23" fill="none"
+            viewBox="0 0 22 23">
+            <path fill="#D1D0D5" fill-rule="evenodd"
+              d="M13.022 15.221c.08.268.11.55.088.833l.002.44a.66.66 0 0 1-1.32 0v-.492c.025-.336-.074-.61-.276-.821a.66.66 0 0 1 .405-1.112c1.536-.17 2.559-.704 2.559-2.763 0-.515-.196-1.004-.55-1.375a.66.66 0 0 1-.142-.687c.108-.29.14-.598.096-.897-.225.076-.578.233-1.064.559a.66.66 0 0 1-.542.088 5.81 5.81 0 0 0-3.071 0 .66.66 0 0 1-.543-.088c-.48-.322-.831-.48-1.064-.556-.043.299-.01.606.096.895a.66.66 0 0 1-.14.684c-.359.377-.554.87-.551 1.39 0 2.032 1.027 2.576 2.568 2.768a.66.66 0 0 1 .394 1.112.992.992 0 0 0-.276.756l.001.475c0 .29-.192.549-.47.632a4.082 4.082 0 0 1-1.164.189c-1.22 0-1.799-.735-2.177-1.216-.157-.199-.319-.404-.43-.43a.66.66 0 0 1 .32-1.282c.55.137.867.54 1.147.895.377.478.64.817 1.449.691a2.174 2.174 0 0 1 .096-.683c-1.18-.31-2.778-1.177-2.778-3.904a3.296 3.296 0 0 1 .659-2 3.125 3.125 0 0 1 .17-1.948A.661.661 0 0 1 6.936 7c.192-.058.899-.166 2.214.648a7.105 7.105 0 0 1 3.186 0c1.315-.813 2.021-.704 2.213-.648a.66.66 0 0 1 .42.373c.267.62.325 1.3.172 1.949.428.57.66 1.26.66 1.984 0 2.76-1.596 3.617-2.778 3.915Zm1.252-11.853H6.846c-2.912 0-4.866 2.05-4.866 5.086v6.987c0 3.045 1.954 5.087 4.866 5.087h7.428c2.912 0 4.866-2.042 4.866-5.087V8.454c0-3.036-1.954-5.086-4.866-5.086Z"
+              clip-rule="evenodd" />
+          </svg>  @${github}`
       }
 
 
