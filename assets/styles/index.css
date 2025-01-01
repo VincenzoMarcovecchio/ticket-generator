@@ -158,6 +158,9 @@ input:focus{
   .formDetails.error input {
     border-color: #f2070e;
   }
+  .icon-message {
+    margin-right: 0.3rem;
+  }
 button {
     border: none;
     border-radius: 8px;
@@ -237,4 +240,31 @@ height: 280px;
 .ticket-container .logo {
     margin: 0.9rem -1%;
     scale: 0.8;
+}
+
+@media (min-width: 776px){
+
+
+body {
+position:  relative;
+background-image:  url(../images/pattern-lines.svg), url(../images/pattern-squiggly-line-top.svg), 
+url(../images/pattern-squiggly-line-bottom.svg),
+url(../images/background-desktop.png);
+background-position: center, top right, bottom left, center;
+background-repeat: no-repeat;
+background-size: cover, 50%,50%, cover;
+color: #9A9AB5;
+padding: 0.9rem;
+text-align: center;
+overflow-x: hidden;
+
+}
+
+.circle {
+    display: block;
+    position: absolute;
+    right: 10%;
+    top: 54%;
+    z-index: -4;
+}
 }
