@@ -45,6 +45,9 @@ overflow-x: hidden;
 
 h2 {
 color: #dadae1;
+    font-size: 1.9rem;
+    max-width: 400px;
+    margin: auto;
 }
 
 
@@ -60,7 +63,12 @@ background-color: rgba(171, 171, 188, 0.25);
 border-radius: 5px;
 width:100%;
 margin: auto;
+cursor: pointer;
 
+}
+
+.upload-container:hover{
+background-color: rgba(171, 171, 188, 0.672);
 }
 .upload-buttons {
     display: none;
@@ -98,12 +106,14 @@ margin-bottom: 0.5rem;}
 .avatar-error {
     color: #f2070e;
     display: flex;
+    font-size: smaller;
+    align-items: center;
 }
 form {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-width: 600px;
+    max-width: 500px;
     margin: auto;
 }
 
@@ -125,6 +135,11 @@ background-color: rgba(171, 171, 188, 0.25);
   border-radius: 5px;
   padding: 0.8rem;
 width: 100%;  margin:1rem auto;
+cursor: pointer;
+}
+input[type="text"]:hover {
+background-color: rgba(171, 171, 188, 0.672);
+
 }
 
 .formDetails {
@@ -175,6 +190,10 @@ button {
 
 .congrats-container {
     display: none;
+}
+.congrats-container p  {
+    max-width: 400px;
+    margin: auto;
 }
 .svg-ticket {
     margin: 5rem auto;
@@ -263,8 +282,14 @@ overflow-x: hidden;
 .circle {
     display: block;
     position: absolute;
-    right: 10%;
+    right: 20%;
     top: 54%;
     z-index: -4;
+}
+
+h2 {
+    font-size: 2.7rem;
+    max-width: 600px;
+    margin: auto;
 }
 }
